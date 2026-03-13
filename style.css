@@ -16,6 +16,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 nav {
@@ -70,22 +72,12 @@ header {
     text-align: center;
     padding: 4rem 2rem;
     color: #fff;
-    background: linear-gradient(135deg, #161616 0%, #1f2937 40%, #FFCE66 100%);
+    background: linear-gradient(135deg, #FFCE66 0%, #1f2937 40%, #161616 100%);
     background-size: 200% 200%;
     box-shadow: inset 0 -80px 120px rgba(0,0,0,0.35);
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-header {
-    animation: gradientShift 8s ease infinite;
 }
 
 header div {
@@ -119,6 +111,7 @@ section {
 }
 
 section h2 {
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
     color: #161616;
@@ -151,6 +144,11 @@ section h2 {
     color: #666;
 }
 
+.service-card:hover{
+    transform: translateY(-6px);
+    transition: transform 0.2s ease;
+}
+
 footer {
     background-color: #161616;
     color: #fff;
@@ -165,4 +163,53 @@ footer p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
     color: #fff;
+}
+
+/* Transition for theme change */
+
+nav,
+header,
+.service-card,
+footer {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#toggle-theme-toggle img {
+    transition: transform 0.3s ease;
+}
+
+#toggle-theme-toggle:active img {
+    transform: rotate(180deg);
+}
+
+/* Dark Theme Styles */
+
+.dark-theme {
+    background-color: #121212;
+    color: #e4e4e4;
+}
+
+.dark-theme nav {
+    background-color: #0a0a0a;
+}
+
+.dark-theme header {
+    background: linear-gradient(135deg, #000000 0%, #111827 40%, #FFCE66 100%);
+}
+
+.dark-theme section h2 {
+    color: #ffffff;
+}
+
+.dark-theme .service-card {
+    background: #1f1f1f;
+    color: #e4e4e4;
+}
+
+.dark-theme .service-card p {
+    color: #cfcfcf;
+}
+
+.dark-theme footer {
+    background-color: #0a0a0a;
 }
