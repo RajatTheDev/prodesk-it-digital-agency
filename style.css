@@ -160,3 +160,9 @@ footer {
     padding-left:  2rem;
     padding-right: 2rem;
 }
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
